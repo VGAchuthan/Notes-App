@@ -159,10 +159,6 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.setFragmentResult("searchType",
                 bundleOf("searchType" to ViewModes.SEARCH_MODE, "text" to text.toString()))
         }
-//        viewMode = null
-
-
-//        println("searched list : $list")
 
     }
 
@@ -179,17 +175,23 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.main_menu, menu)
         val searchMenuItem = menu?.findItem(R.id.search_bar)
         val searchView =  searchMenuItem?.actionView as SearchView
+//        val searchPlate = searchView.findViewById(androidx.appcompat.R.id.search_plate)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 if(viewMode == ViewModes.SEARCH_IN_LABEL)
-                searchNotesWithText(query)
+                    searchNotesWithText(query)
                 return false
             }
             override fun onQueryTextChange(newText: String): Boolean {
-                searchNotesWithText(newText)
+                    searchNotesWithText(newText)
                 return false
             }
         })
+        searchView.setOnCloseListener {
+//            setTitle()
+            Log.e("IN MAIN","search view x cleick")
+             false
+        }
         return super.onCreateOptionsMenu(menu)
     }
     private fun setFragmentInContainer(){

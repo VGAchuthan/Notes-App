@@ -188,9 +188,12 @@ class InitializeNotes {
         public fun labelFunctionsCheck(){
             addLabel(label1)
             addLabel(label2)
-            val label3 = Label("a".capitalize())
+            for(i in 1..30){
+                var label3 = Label("a+$i".capitalize())
 
-            addLabel(label3)
+                addLabel(label3)
+            }
+
             val label4 = Label("H")
             addLabel(label4)
 

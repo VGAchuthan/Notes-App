@@ -62,8 +62,8 @@ private var listOfExistingLabels : List<Label> = ArrayList()) : RecyclerView.Ada
 
         }
         fun onCLickFunctionalities(){
-            if(!isSelected)
-                isSelected = true
+//            if(!isSelected)
+//                isSelected = true
             previousSelectedItemIndex = currentSelectedItemIndex
             currentSelectedItemIndex = position
             Log.e("IN L A","$previousSelectedItemIndex : $currentSelectedItemIndex")
@@ -73,6 +73,8 @@ private var listOfExistingLabels : List<Label> = ArrayList()) : RecyclerView.Ada
             selectLabelFunctionalities()
         }
         fun bind(label : Label){
+            this.isSelected = false
+            Log.e("NEAR BIND","${label.name}is selected : $isSelected - ${this.layoutPosition}")
             this.current_label = label
             if(listOfExistingLabels.contains(current_label)){
                 checkBox.isChecked = true
@@ -83,13 +85,14 @@ private var listOfExistingLabels : List<Label> = ArrayList()) : RecyclerView.Ada
 //                labelName.isFocusable = false
 
                 labelName.setOnClickListener {
-                    onCLickFunctionalities()
+                    if(!this.isSelected)
+                        onCLickFunctionalities()
                 }
                 itemView.setOnClickListener {
                     onCLickFunctionalities()
                 }
                 rightDrawable.setOnClickListener {
-                    if(isSelected){
+//                    if(isSelected){
                         previousSelectedItemIndex = currentSelectedItemIndex
                         currentSelectedItemIndex = -1
                         isSelected=false
@@ -99,7 +102,7 @@ private var listOfExistingLabels : List<Label> = ArrayList()) : RecyclerView.Ada
                         notifyItemChanged(this.layoutPosition)
 
 
-                    }
+//                    }
 
 
                 }
@@ -153,7 +156,8 @@ private var listOfExistingLabels : List<Label> = ArrayList()) : RecyclerView.Ada
         @SuppressLint("UseCompatLoadingForDrawables")
         private fun selectLabelFunctionalities(){
             if(currentSelectedItemIndex == this.layoutPosition){
-                Log.e("IN LABEL ADAPTER","CURENTLY LCIKEC : $currentSelectedItemIndex - $position - $layoutPosition")
+                this.isSelected = true
+                Log.e("IN LABEL ADAPTER","CURENTLY LCIKEC : $isSelected-$currentSelectedItemIndex - $position - $layoutPosition")
                 itemView.setBackgroundColor(context.resources.getColor(R.color.label_selected))
                 leftDrawable.background = context.getDrawable(R.drawable.ic_baseline_delete_outline_24)
                 rightDrawable.background = context.getDrawable(R.drawable.ic_baseline_done_24)
@@ -169,7 +173,7 @@ private var listOfExistingLabels : List<Label> = ArrayList()) : RecyclerView.Ada
 
             }
             else{
-                isSelected = false
+               this.isSelected = false
                 itemView.setBackgroundColor(context.resources.getColor(R.color.white))
                 leftDrawable.background = context.getDrawable(R.drawable.ic_outline_label_24)
                 rightDrawable.background = context.getDrawable(R.drawable.ic_baseline_edit_24)

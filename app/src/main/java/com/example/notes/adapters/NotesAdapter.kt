@@ -72,6 +72,9 @@ class NotesAdapter(private val context: Context, dataSet : List<Notes>?) : Recyc
         }
 
         private fun fillLabelsInChip() {
+            Log.e("NOTES ADAPT","${chipContainer.childCount} != ${current_note.listOfLabels.size}")
+            chipContainer.removeAllViews()
+            if(chipContainer.childCount != current_note.listOfLabels.size)
             if(!current_note.listOfLabels.isEmpty())
             {
                 chipContainer.visibility = View.VISIBLE

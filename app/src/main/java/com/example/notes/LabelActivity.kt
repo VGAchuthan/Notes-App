@@ -158,3 +158,7 @@ class LabelActivity : AppCompatActivity() {
             false
     }
 }
+
+interface LabelOnClickListener{
+    fun updateLabel(oldLabel : Label, position : Int )
+}
