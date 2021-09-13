@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="35dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:id="@+id/bottom_sheet_layout_add_label">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:padding="4dp"
+            android:id="@+id/bottom_sheet_add_label_icon"
+            android:src="@drawable/ic_outline_label_24"/>
+
+        <TextView
+            android:id="@+id/bottom_sheet_add_label"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@+id/bottom_sheet_add_label_icon"
+            android:padding="4dp"
+            android:text="@string/bottom_sheet_add_label"
+            android:textSize="18sp" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

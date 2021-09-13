@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/notesGroup">
+        <item
+            android:id="@+id/item_notes"
+            android:icon="@drawable/ic_outline_event_note_24"
+            android:title="@string/notes" />
+
+
+
+
+
+    </group>
+    <group android:id="@+id/labelGroup">
+
+    </group>
+    <group android:id="@+id/trashGroup">
+        <item
+            android:id="@+id/item_archive"
+            android:icon="@drawable/ic_outline_archive_24"
+            android:title="@string/archive"
+            />
+        <item
+            android:id="@+id/item_trash"
+            android:icon="@drawable/ic_baseline_delete_outline_24"
+            android:title="@string/trash" />
+    </group>
+    <group android:id="@+id/extraGroup">
+        <item
+            android:id="@+id/item_settings"
+            android:icon="@drawable/ic_outline_settings_24"
+            android:title="@string/settings" />
+<!--        <item-->
+<!--            android:id="@+id/item_feedback"-->
+<!--            android:icon="@drawable/ic_baseline_delete_outline_24"-->
+<!--            android:title="@string/trash" />-->
+    </group>
+
+</menu>

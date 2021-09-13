@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/drawable/ic_baseline_delete_outline_24.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/drawable/ic_launcher_background.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/drawable/ic_outline_archive_24.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/fragments/drawable/ic_baseline_add_24.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/fragments/drawable/ic_baseline_clear_24.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/fragments/drawable/ic_baseline_done_24.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/fragments/drawable/ic_baseline_edit_24.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/fragments/drawable/ic_baseline_label_24.xml" value="0.13697916666666668" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/fragments/drawable/ic_baseline_more_vert_24.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/fragments/drawable/ic_baseline_push_pin_24.xml" value="0.13697916666666668" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/fragments/drawable/ic_outline_delete_forever_24.xml" value="0.13697916666666668" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/fragments/drawable/ic_outline_label_24.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/fragments/drawable/ic_outline_restore_24.xml" value="0.13697916666666668" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/fragments/drawable/ic_outline_search_24.xml" value="0.23703703703703705" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/fragments/layout/fragment_notes.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/layout/activity_label.xml" value="0.264" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/layout/app_bar_main.xml" value="0.2" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/layout/drawrer_header.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/layout/fragment_notes.xml" value="0.264" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/layout/layout_bottom_dialog.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/layout/layout_item_header.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/layout/layout_label_chip_view.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/layout/layout_label_view.xml" value="0.536" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/layout/layout_notes_card.xml" value="0.2" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/layout/layout_notes_detail.xml" value="0.2" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/layout/layout_search_app_bar.xml" value="0.264" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/menu/bottom_nav_bar_menu.xml" value="0.12864583333333332" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/menu/drawer_menu.xml" value="0.264" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/menu/main_menu.xml" value="0.12864583333333332" />
+        <entry key="..\:/Users/achu-12200/AndroidStudioProjects/Notes/app/src/main/res/menu/notes_details_menu.xml" value="0.4" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

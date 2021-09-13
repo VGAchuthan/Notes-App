@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_notes_details_pin"
+        android:icon="@drawable/ic_outline_push_pin_24"
+        android:title="@string/pin"
+        app:showAsAction="always" />
+    <item android:id="@+id/item_notes_details_archive"
+        android:title="@string/archive"
+        android:icon="@drawable/ic_outline_archive_24"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/item_notes_details_trash"
+        android:icon="@drawable/ic_baseline_delete_outline_24"
+        android:title="@string/trash"
+        app:showAsAction="always" />
+
+
+</menu>

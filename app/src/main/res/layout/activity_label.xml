@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/label_activity_app_bar"
+        />
+
+    <EditText
+        android:id="@+id/label_activity_add_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:drawableStart="@drawable/ic_baseline_clear_24"
+        android:drawableEnd="@drawable/ic_baseline_done_24"
+        android:drawablePadding="4dp"
+        android:inputType="textCapWords"
+        android:layout_below="@id/label_activity_app_bar"
+        android:hint="Create New Label"
+        android:paddingStart="4dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/label_activity_error_view"
+        android:text="Label Already Exists"
+        android:textSize="12dp"
+        android:layout_below="@id/label_activity_add_label"
+        android:layout_marginStart="34dp"
+        android:visibility="gone"
+        android:textColor="@color/error"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/label_activity_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/label_activity_error_view"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        />
+
+</RelativeLayout>
