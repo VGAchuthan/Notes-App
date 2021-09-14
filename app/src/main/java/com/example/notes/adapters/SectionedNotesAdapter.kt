@@ -31,13 +31,32 @@ class NotesDiffCallback : DiffUtil.ItemCallback<DataItem>() {
     }
 }
 
-class SectionedNotesAdapter(private val context : Context,dataSet : List<Notes>?)  : ListAdapter<DataItem,RecyclerView.ViewHolder>(NotesDiffCallback()){
-    private val list = dataSet
+class SectionedNotesAdapter(private val context : Context)  : ListAdapter<DataItem,RecyclerView.ViewHolder>(NotesDiffCallback()){
+    private var list  : List<Notes>? = null
     init {
+//        val items = when(list){
+//            null -> { listOf(DataItem.Header("Loading"))}
+//            else ->{
+//                val gropuByList = list.groupBy { it.notesType }
+//                var myList = ArrayList<DataItem>()
+//                for(key in gropuByList.keys){
+//                    myList.add(DataItem.Header(key.toString().toLowerCase()))
+//                    for(items in gropuByList.getValue(key)){
+//                        myList.add(DataItem.NotesItem(items))
+//                    }
+//                }
+//                myList
+//            }
+//        }
+//        submitList(items)
+//        groupTheList(list)
+    }
+    fun groupTheList(dataSet : List<Notes>?){
+        list = dataSet
         val items = when(list){
             null -> { listOf(DataItem.Header("Loading"))}
             else ->{
-                val gropuByList = list.groupBy { it.notesType }
+                val gropuByList = list!!.groupBy { it.notesType }
                 var myList = ArrayList<DataItem>()
                 for(key in gropuByList.keys){
                     myList.add(DataItem.Header(key.toString().toLowerCase()))
@@ -48,7 +67,13 @@ class SectionedNotesAdapter(private val context : Context,dataSet : List<Notes>?
                 myList
             }
         }
+        println("0000000000000000000000000000000000000000000000000000000000000000")
+        println(items)
+
+
         submitList(items)
+//        this.notifyDataSetChanged()
+
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {

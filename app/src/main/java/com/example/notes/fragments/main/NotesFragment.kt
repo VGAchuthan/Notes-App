@@ -8,10 +8,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.setFragmentResultListener
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.notes.R
@@ -23,6 +25,10 @@ import com.example.notes.entities.Notes
 import com.example.notes.operations.NotesOperation
 import com.example.notes.operations.NotesOperationHandler
 import com.example.notes.operations.SearchOperations
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
+
+
+
 
 class NotesFragment : Fragment() {
     private var rootView: View? = null
@@ -31,6 +37,8 @@ class NotesFragment : Fragment() {
     private lateinit var adapter : NotesAdapter
     private   var selectedLabel : Label?=null
     private var searchedText : String? = null
+    private var swipeListener : ItemTouchHelper?=null
+    private var listOfNotes : List<Notes>? =null
     private val notesOperationHandler  : NotesOperationHandler = NotesOperation()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +62,9 @@ class NotesFragment : Fragment() {
             Log.e("IN NOT FRAG 2 Lsit"," text : $searchedText")
             initializeViews()
         }
+
+
+
 
         retainInstance = true
     }
@@ -89,24 +100,64 @@ class NotesFragment : Fragment() {
         if(savedInstanceState != null){
             Log.e("NOTES FRAGMENT","SAVED INSTANCE NOT NULL")
         }
+
         initializeViews()
         Log.e("NOTES FRAGMENT","ON VIEW CREATE")
         super.onViewCreated(view, savedInstanceState)
 
 
     }
-    private fun initializeView(viewType: String){
 
-    }
     private fun initializeViews(){
         Log.e("NOTES FRAGMENT","INITIALIZE VIEWS : $viewType")
         activity?.setTitle(viewType)
         var dividerItemDecoration = DividerItemDecoration(recyclerView.context, Configuration.ORIENTATION_PORTRAIT)
-        val listOfNotes =getNotesList(viewType!!)
+        listOfNotes =getNotesList(viewType!!)
         adapter = NotesAdapter(this.requireContext(),listOfNotes)
-        var sectionedadapter = SectionedNotesAdapter(this.requireContext(),listOfNotes)
+        var sectionedadapter = SectionedNotesAdapter(this.requireContext())
+        sectionedadapter.groupTheList(listOfNotes)
         recyclerView.adapter = sectionedadapter
         recyclerView.layoutManager = LinearLayoutManager(this.context)
+        swipeListener = ItemTouchHelper(
+            object : ItemTouchHelper.SimpleCallback(
+                0,ItemTouchHelper.RIGHT or
+                        ItemTouchHelper.LEFT
+            ) {
+                override fun onMove(
+                    recyclerView: RecyclerView,
+                    viewHolder: ViewHolder, target: ViewHolder
+                ): Boolean {
+                    return false // true if moved, false otherwise
+                }
+
+                override fun onSwiped(viewHolder: ViewHolder, direction: Int) {
+                    val position = viewHolder.adapterPosition - 1
+                    Log.e("ON SWIPE","layout position ${position}")
+                    var notes = listOfNotes?.get(position)
+                    // remove from adapter
+                    when(direction){
+                        ItemTouchHelper.RIGHT,ItemTouchHelper.LEFT->{
+                            notesOperationHandler.archiveNote(notes!!)
+                            (listOfNotes as ArrayList).removeAt(position)
+//                            adapter.notifyItemRemoved(position)
+
+//                            sectionedadapter.notifyItemRemoved(position + 1)
+                            sectionedadapter.groupTheList(listOfNotes)
+//                            sectionedadapter.notifyDataSetChanged()
+
+                            return
+
+                        }
+
+                    }
+                    Toast.makeText(requireContext(),"swipe detecttor : $direction",Toast.LENGTH_SHORT).show()
+                }
+            })
+        swipeListener?.attachToRecyclerView(recyclerView)
+
+
+
+
 //        recyclerView.addItemDecoration(dividerItemDecoration)
     }
     private fun getNotesList(viewType: String) : List<Notes>?{
